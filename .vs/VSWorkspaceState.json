@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\e2e\\src",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\flight-search",
+    "\\src\\app\\components\\show-flights",
+    "\\src\\app\\models",
+    "\\src\\app\\services"
+  ],
+  "SelectedNode": "\\src\\app\\models\\state.spec.ts",
+  "PreviewInSolutionExplorer": false
+}

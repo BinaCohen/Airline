@@ -1,0 +1,60 @@
+<div>
+  <p>
+  <mat-toolbar>
+    <span>Airline Ltd</span>
+  </mat-toolbar>
+</p>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <mat-card>
+        <div class="row">
+          <div class="col-lg-2">
+            <button mat-raised-button color="accent" (click)="sortByStops()">Sort by stops</button>
+          </div>
+          <div class="col-lg-2">
+            <button mat-raised-button color="accent" (click)="sortByDuration()">Sort by duration</button>
+          </div>
+          <div class="col-lg-2">
+            <button mat-raised-button color="accent" (click)="sortByPrice()">Sort by price</button>
+          </div>
+        </div>
+      </mat-card>
+      <div class="flight-card" *ngFor="let route of flightService.flightsSearchResult">
+        <mat-card>
+          <div class="row">
+            <div class="col-lg-3"><b>Departure</b></div>
+            <div class="col-lg-3"><b>Landing</b></div>
+            <div class="col-lg-2"><b>Stops: {{route.stops}}</b></div>
+            <div class="col-lg-2"><b>Duration</b></div>
+            <div class="col-lg-2"><b>Price</b></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">TLV</div>
+            <div class="col-lg-3">{{route.flights[route.flights.length - 1].destination.iata}}</div>
+            <div class="col-lg-2">
+              <div *ngFor="let flight of route.flights; let i = index"> <div *ngIf="i != 0 && i != route.flights.length">{{flight.origin.iata}}</div> </div>
+            </div>
+            <div class="col-lg-2"> <span *ngIf="route.duration.days > 0">{{route.duration.days}}d </span>{{route.duration.hours}}h <span *ngIf="route.duration.minutes < 10">0</span>{{route.duration.minutes}}m </div>
+            <div class="col-lg-2">{{route.price}} $</div>
+
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              {{route.flights[0].departureDate.getDate()}}/{{route.flights[0].departureDate.getMonth() + 1}}/{{route.flights[0].departureDate.getFullYear()}}
+              {{route.flights[0].departureDate.getHours()}}:{{route.flights[0].departureDate.getMinutes()}}
+            </div>
+            <div class="col-lg-3">
+              {{route.flights[route.flights.length - 1].departureDate.getDate()}}/{{route.flights[route.flights.length - 1].departureDate.getMonth() + 1}}/{{route.flights[route.flights.length - 1].departureDate.getFullYear()}}
+              {{route.flights[route.flights.length - 1].departureDate.getHours()}}:{{route.flights[route.flights.length - 1].departureDate.getMinutes()}}
+            </div>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-2"></div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

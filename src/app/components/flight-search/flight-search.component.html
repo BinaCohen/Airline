@@ -1,0 +1,91 @@
+<div id="booking" class="section">
+  <div class="section-center">
+    <div class="container">
+      <div class="row" style="height:">
+        <div class="col-md-4">
+          <div class="booking-cta">
+            <h1>Airline Ltd</h1>
+            <h2>Book your flight today</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate laboriosam numquam at</p>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-7 col-md-offset-1">
+          <div class="booking-form">
+            <form [formGroup]="flightForm"  (submit)="SearchFlights()">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <mat-form-field class="example-full-width" appearance="none">
+                      <span class="form-label">Flying to</span>
+                      <input class="form-control"
+                             id="flyingTo"
+                             type="text"
+                             placeholder="City or airport"
+                             aria-label="Number"
+                             matInput
+                             [matAutocomplete]="auto"
+                             disableUnderline="true"
+                             formControlName="to">
+                      <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of this.airports " [value]="option.label">
+                          {{option.label}}
+                        </mat-option>
+                      </mat-autocomplete>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <span class="form-label">Departing</span>
+                    <input class="form-control" formControlName="fromDate" type="date">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <span class="form-label">Returning</span>
+                    <input class="form-control" formControlName="toDate" type="date">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <span class="form-label">Stops</span>
+                    <select class="form-control" formControlName="stops">
+                      <option value="0">Direct</option>
+                      <option value="1">1 Stop</option>
+                      <option value="2">2 Stops</option>
+                      <option value="3">3+ Stops</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <span class="form-label">Minimum price</span>
+                    <input value="0" class="form-control" formControlName="minPrice" type="number" min="1" max="10000">
+                    <span class="select-arrow"></span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <span class="form-label">Maximum price</span>
+                    <input id="price" class="form-control" formControlName="maxPrice" type="number" min="1" max="10000">
+                    <label id="priceLable"></label>
+                    <span class="select-arrow"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-btn">
+                <button class="submit-btn" type="submit">Show flights</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
