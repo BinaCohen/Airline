@@ -21,10 +21,28 @@ describe('ShowFlightsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ShowFlightsComponent);
     component = fixture.componentInstance;
+    spyOn(component, 'sortByStops');
+    spyOn(component, 'sortByDuration');
+    spyOn(component, 'sortByPrice');
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('sort flights by stops', () => {
+    component.sortByStops();
+    expect(component.sortByStops).toHaveBeenCalled();
+  });
+
+  it('sort flights by duration', () => {
+    component.sortByDuration();
+    expect(component.sortByDuration).toHaveBeenCalled();
+  });
+
+  it('sort flights by price', () => {
+    component.sortByPrice();
+    expect(component.sortByPrice).toHaveBeenCalled();
   });
 });
