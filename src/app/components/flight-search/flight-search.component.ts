@@ -15,8 +15,6 @@ export class FlightSearchComponent implements OnInit {
 
   private apca;
   public airports: Array<Airport> = [];
-  public test = 1;
-  filteredOptions: Observable<string[]>;
   
   flightForm = new FormGroup({
     to: new FormControl(),
