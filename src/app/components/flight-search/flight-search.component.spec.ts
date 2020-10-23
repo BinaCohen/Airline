@@ -45,9 +45,9 @@ describe('FlightSearchComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('onNewSearchTerm() ',async () => {
-   await component.onNewSearchTerm("tlv");
-    console.log(component.airports);
+  it('onNewSearchTerm() ', () => {
+    component.onNewSearchTerm("tl");
+    expect(component.airports.length).toEqual(0);
   });
 
   it('should go to url',
