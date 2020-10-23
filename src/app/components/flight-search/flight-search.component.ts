@@ -78,15 +78,6 @@ export class FlightSearchComponent implements OnInit {
   }
 
   /**
-   * This is fired whenever an airport is selected
-   * @param airport the selected airport object
-   */
-  onSelectAirport(airport: any) {
-    // do something with the data
-    console.log('airport', airport)
-  }
-
-  /**
    * This updates the response to add an appropriate label to each airport item
    * @param data the data we get back from the API
    */
