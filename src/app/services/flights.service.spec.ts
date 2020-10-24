@@ -18,6 +18,15 @@ describe('FlightsService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('searchFlights("TBS") return the empty array when not flights where found', () => {
+    let form = {
+      value: { "to": "TBS", "fromDate": null, "toDate": null, "stops": null, "minPrice": 0, "maxPrice": null }
+    }
+    service.searchFlights(form).subscribe(res => {
+      expect(res.length).toEqual(0);
+    });
+  });
+  
   it('searchFlights("LIS") return the flight list with LIS destination', () => {
     let form = {
       value: { "to": "LIS", "fromDate": null, "toDate": null, "stops": null, "minPrice": 0, "maxPrice": null }
