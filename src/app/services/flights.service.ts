@@ -170,7 +170,11 @@ export class FlightsService {
       });
     }
     else {
-      this.flightsSearchResult = this.flightsMap.get(this.flightForm.value.to.substring(0, 3)).routes;
+      if (this.flightsMap.get(this.flightForm.value.to.substring(0, 3))) {
+        this.flightsSearchResult = this.flightsMap.get(this.flightForm.value.to.substring(0, 3)).routes;
+      } else {
+        this.flightsSearchResult = [];
+      }
     }
 
     //In case there is no minimum price
