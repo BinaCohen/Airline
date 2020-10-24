@@ -21,7 +21,11 @@
           </div>
         </div>
       </mat-card>
-      <div class="flight-card" *ngFor="let route of flightService.flightsSearchResult">
+      <div class="row">
+        <div class="col-lg-5"></div>
+        <span class="col-lg-7" *ngIf="flightService.flightsSearchResult.length == 0">No flights were found</span>
+      </div>
+        <div class="flight-card" *ngFor="let route of flightService.flightsSearchResult">
         <mat-card>
           <div class="row">
             <div class="col-lg-3"><b>Departure</b></div>
