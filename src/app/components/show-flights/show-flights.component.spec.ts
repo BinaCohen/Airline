@@ -4,6 +4,7 @@ import { DatePipe } from '@angular/common';
 import { ShowFlightsComponent } from './show-flights.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { FlightsService } from '../../services/flights.service';
 
 describe('ShowFlightsComponent', () => {
   let component: ShowFlightsComponent;
