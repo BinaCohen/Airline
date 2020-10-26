@@ -15,8 +15,6 @@ import { ShowFlightsComponent } from '../show-flights/show-flights.component';
 
 describe('FlightSearchComponent', () => {
   let component: FlightSearchComponent;
-  let service: FlightsService
-  let route: Router;
   let fixture: ComponentFixture<FlightSearchComponent>;
 
   beforeEach(async(() => {
@@ -24,10 +22,12 @@ describe('FlightSearchComponent', () => {
       imports: [HttpClientModule,
         
         RouterTestingModule.withRoutes([{ path: "show-flights", component: ShowFlightsComponent }]),
-                MatAutocompleteModule,
-                MatFormFieldModule, MatInputModule,
+        MatAutocompleteModule,
+        MatFormFieldModule,
+        MatInputModule,
         BrowserAnimationsModule,
-        FormsModule, ReactiveFormsModule
+        FormsModule,
+        ReactiveFormsModule
         ],
       declarations: [FlightSearchComponent],
       providers: [DatePipe],
