@@ -1,5 +1,7 @@
 {
+
   "compileOnSave": false,
+
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -11,4 +13,5 @@
     "typeRoots": [ "node_modules/@types" ],
     "lib": [ "ES2017", "DOM" ]
   }
+
 }
