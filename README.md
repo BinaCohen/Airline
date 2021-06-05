@@ -1,5 +1,16 @@
 # AirlineLtd
 
+Airline Ltd. wants to build a system for finding flights that will use its customers on the national flight website.
+
+You can search for flights according to the following parameters separately or combine them together:
+It will be possible to search for flights by a specific destination.
+You can search for flights on dates from a specific date to a specific date including.
+You can select the number of connections made or a direct flight.
+You can search for flights in a certain price range from minimum to maximum or give a maximum threshold that cannot be exceeded.
+It will be possible to sort the flights by the length of the flight.
+It will be possible to sort the flights by the number of stations (connections).
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
 
 ## Install
